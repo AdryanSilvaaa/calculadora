@@ -21,8 +21,12 @@ let corTeste = verificarCor(corUsuario);
 // Testando o valor da variável e exibindo a mensagem correspondente
 if (corTeste) {
     document.write('Sucesso: A cor é verde.');
-} else {
-    document.write('Erro');
+} 
+else if(!isNaN (corUsuario)){
+    document.write("Por favor numeros não são validos, digite algumas das cores: verde/vermelho/amarelo");
+}
+else {
+    document.write('Por favor digite algumas das cores: verde/vermelho/amarelo');
 }
 
 
