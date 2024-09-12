@@ -1,4 +1,3 @@
-
 /* Função para verificar valor se é verde ou não  */
 function verificarCor(cor) {
     let resultado;
@@ -6,6 +5,12 @@ function verificarCor(cor) {
         case 'verde':
             resultado = true;
             break;
+
+        case 'vermelho':
+        case 'amarelo':
+            resultado = false;
+            break;
+
         default:
             resultado = false;
     }
@@ -19,23 +24,14 @@ let corUsuario = prompt('Digite uma cor (verde, vermelho ou amarelo):');
 let corTeste = verificarCor(corUsuario);
 
 // Testando o valor da variável e exibindo a mensagem correspondente
-if (corTeste) {
+if (corTeste === true) {
     document.write('Sucesso: A cor é verde.');
-} 
-else if(!isNaN (corUsuario)){
-    document.write("Por favor numeros não são validos, digite algumas das cores: verde/vermelho/amarelo");
+} else if (corUsuario.toLowerCase() === 'vermelho') {
+    document.write('Erro: a cor não é vermelho.');
+} else if (corUsuario.toLowerCase() === 'amarelo') {
+    document.write('Erro: a cor não é amarelo.');
+} else if (!isNaN(corUsuario)) {
+    document.write("Erro: números não são válidos, digite uma das cores: verde/vermelho/amarelo.");
+} else {
+    document.write('Erro: por favor, digite uma das cores: verde/vermelho/amarelo.');
 }
-else {
-    document.write('Por favor digite algumas das cores: verde/vermelho/amarelo');
-}
-
-
-
-/* 
- escrever uma função que recebera um parametro tipo texto pode ser verde vermelho ou amarelo.
- a função ira testar o valor desse parametro tipo texto, caso o valor seja 
- verde retornara um valor boolean que indica verdadeiro, e qualquer outra valor é falso. 
- o valor por essa função devera ser armazenado em uma variavel e posteriormente sera testado.
- se o valor for verdadeiro, mostrar uma menssagem de sucesso caso ao contrario indicar erro 
-
-*/
